@@ -22,6 +22,12 @@ namespace RabbitMq_IP_Main
         {
             Console.WriteLine("RabbitMq_IP_v2.0 strarted...");
 
+            /// <summary>
+            ///     RABBITMQ CONFIG
+            /// </summary>
+            /// 
+
+
             //API's config
             //  HMS api is used by adding a extern library (Prestasharp client)
             //  https://github.com/Bukimedia/PrestaSharp
@@ -48,8 +54,10 @@ namespace RabbitMq_IP_Main
             
             
             /// <summary>
-            /// RABBITMQ SENDERS AND RECEIVERS
+            ///     RABBITMQ SENDERS AND RECEIVERS
             /// </summary>
+            /// 
+
 
             //a2756b7c-013c-49e9-a4a2-80100387e2f6
             //NEW HMS CUSTOMER SENDER
@@ -58,14 +66,70 @@ namespace RabbitMq_IP_Main
                     HMS_api_URL, HMS_api_ACCOUNT, HMS_api_PASSWORD, "HMS"));
 
 
-            //ffc7217a-7a97-42d2-9ba3-09a46209ce20
+            //a2756b7c-013c-49e9-a4a2-80100387e2f6
             //NEW HMS CUSTOMER RECEIVER
             Task hms_crm_receiver = new Task(
                 RabbitMq_IP.New_hms_customer_notified(
                     CMS_api_URL, CMS_api_ACCOUNT, CMS_api_PASSWORD, "CRM"));
 
+            //0a9c1bf4-2436-4e3e-bbdf-0bb0d2162bf7
+            //HMS send to NINJA nieuwe factuur data
+            Task hms_ninja_sender = new Task(
+                RabbitMq_IP.Notify_new_orders(
+                    HMS_api_URL, HMS_api_ACCOUNT, HMS_api_PASSWORD, "HMS"));
+
+            
+
+            //0a9c1bf4-2436-4e3e-bbdf-0bb0d2162bf7
+            //NEW HMS ORDER RECEIVER
+            Task hms_ninja_receiver = new Task(
+                RabbitMq_IP.New_hms_order_notified(
+                    HMS_api_URL, HMS_api_ACCOUNT, HMS_api_PASSWORD, "IMS"));
 
 
+            //6070698c-ff4b-417b-bce8-b18adc4be7c4
+            //CRM send nieuwe klanten (confirmed) data
+            Task crm_sender = new Task(
+                RabbitMq_IP.Notify_new_crm_customers(
+                    CMS_api_URL, CMS_api_ACCOUNT, CMS_api_PASSWORD, "CRM"));
+
+
+            //73444267-e6ee-42ad-b2dd-db8d76e73a06
+            //NEW CRM CUSTOMER TO IMS RECEIVER
+            Task crm_ninja_receiver = new Task(
+                RabbitMq_IP.New_crm_ims_customer_notified(
+                    CMS_api_URL, CMS_api_ACCOUNT, CMS_api_PASSWORD, "IMS"));
+            
+
+
+
+            //1237bc42-eac0-4add-9dc1-075d86a590ac
+            //NEW POS CUSTOMER RECEIVER
+            Task crm_hms_receiver = new Task(
+                RabbitMq_IP.New_crm_customer_notified(
+                    HMS_api_URL, HMS_api_ACCOUNT, HMS_api_PASSWORD, "HMS"));
+
+
+            /// <summary>
+            ///     RABBITMQ RUN
+            /// </summary
+            /// 
+
+
+            Console.WriteLine("Senders started...");
+            //RABBITMQ SENDERS
+            //hms_crm_sender.Start();
+            //hms_ninja_sender.Start();
+            //crm_sender.Start();
+
+
+            Console.WriteLine("Receivers started...\n");
+            //RABBITMQ RECEIVERS
+            //hms_crm_receiver.Start();
+            //hms_crm_receiver.Wait();
+            //crm_hms_receiver.Start();
+            //crm_hms_receiver.Wait();
+            Console.ReadKey();
         }
     }
 }
