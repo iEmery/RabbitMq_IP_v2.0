@@ -3,7 +3,11 @@ Microsoft Visual Studio Solution File, Format Version 12.00
 # Visual Studio 15
 VisualStudioVersion = 15.0.26430.12
 MinimumVisualStudioVersion = 10.0.40219.1
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "RabbitMq_IP_v2.0", "RabbitMq_IP_v2.0\RabbitMq_IP_v2.0.csproj", "{70461448-F995-451B-80BB-E0FB111B985D}"
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "PrestaSharp", "PrestaSharp-master\PrestaSharp.csproj", "{3D494A24-06BA-475B-A158-162745683EC3}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "RabbitMq_IP_Main", "RabbitMq_IP_Main\RabbitMq_IP_Main.csproj", "{03558EBA-33C4-4E75-96CB-7E9ECE350595}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "RabbitMq_IP_Library", "RabbitMq_IP_Library\RabbitMq_IP_Library.csproj", "{FB47BD40-5686-4F6C-9E61-B00E7498905F}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
@@ -11,10 +15,18 @@ Global
 		Release|Any CPU = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(ProjectConfigurationPlatforms) = postSolution
-		{70461448-F995-451B-80BB-E0FB111B985D}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
-		{70461448-F995-451B-80BB-E0FB111B985D}.Debug|Any CPU.Build.0 = Debug|Any CPU
-		{70461448-F995-451B-80BB-E0FB111B985D}.Release|Any CPU.ActiveCfg = Release|Any CPU
-		{70461448-F995-451B-80BB-E0FB111B985D}.Release|Any CPU.Build.0 = Release|Any CPU
+		{3D494A24-06BA-475B-A158-162745683EC3}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{3D494A24-06BA-475B-A158-162745683EC3}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{3D494A24-06BA-475B-A158-162745683EC3}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{3D494A24-06BA-475B-A158-162745683EC3}.Release|Any CPU.Build.0 = Release|Any CPU
+		{03558EBA-33C4-4E75-96CB-7E9ECE350595}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{03558EBA-33C4-4E75-96CB-7E9ECE350595}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{03558EBA-33C4-4E75-96CB-7E9ECE350595}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{03558EBA-33C4-4E75-96CB-7E9ECE350595}.Release|Any CPU.Build.0 = Release|Any CPU
+		{FB47BD40-5686-4F6C-9E61-B00E7498905F}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{FB47BD40-5686-4F6C-9E61-B00E7498905F}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{FB47BD40-5686-4F6C-9E61-B00E7498905F}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{FB47BD40-5686-4F6C-9E61-B00E7498905F}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
